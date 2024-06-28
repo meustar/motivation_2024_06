@@ -1,3 +1,4 @@
+## 24_06_28 17일차
 #### 1.
 - 번호 구현.
 - 목록 구현.
@@ -15,3 +16,16 @@
 
 #### 3.
 - source의 글자수가 너무 많아서 밀리면 어떻게하지?
+```java
+for (int i = motivations.size() -1; i >= 0; i--) {
+                    Motivation motivation = motivations.get(i);
+
+                    // 3. 글자수가 너무 많으면..?
+                    // 보여줄때만 보여주고, 인스턴스 변수 자체의 데이터가 훼손 되어서는 안됌.
+                    if (motivation.getSource().length() > 7) {
+                        System.out.printf("    %d    //   %s   //   %s   \n", motivation.getId(), motivation.getSource().substring(0, 5) + "...", motivation.getBody());
+                        continue;
+                    }
+```
+
+- 유지보수 및 협업을 위한 모듈 분리, 패키지 이동(리팩토링)
