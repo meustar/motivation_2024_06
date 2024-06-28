@@ -60,6 +60,14 @@ public class App {
 
                 for (int i = motivations.size() -1; i >= 0; i--) {
                     Motivation motivation = motivations.get(i);
+
+                    // 3. 글자수가 너무 많으면..?
+                    // 보여줄때만 보여주고, 인스턴스 변수 자체의 데이터가 훼손 되어서는 안됌.
+                    if (motivation.getSource().length() > 7) {
+                        System.out.printf("    %d    //   %s   //   %s   \n", motivation.getId(), motivation.getSource().substring(0, 5) + "...", motivation.getBody());
+                        continue;
+                    }
+
                     System.out.printf("    %d    //   %s   //   %s   \n", motivation.getId(), motivation.getSource(), motivation.getBody());
                 }
 
