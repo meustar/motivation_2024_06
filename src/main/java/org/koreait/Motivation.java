@@ -1,9 +1,9 @@
 package org.koreait;
 
 public class Motivation {
-    int id;
-    String body;
-    String source;
+    private int id;
+    private String body;
+    private String source;
 
     public Motivation(int id, String body, String source) {
         this.id = id;
