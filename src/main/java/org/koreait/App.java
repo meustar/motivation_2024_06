@@ -32,6 +32,8 @@ public class App {
                 motivationControlle.add();
             } else if (cmd.equals("list")) {
                 motivationControlle.list();
+            } else if (cmd.equals("del")) {
+                motivationControlle.del();
             }
         }
     }
