@@ -58,8 +58,5 @@ public class MotivationController {
 
     public void delete(Rq rq) {
         System.out.println("delete 실행");
-        System.out.println(rq.toString());
-        System.out.println(rq.getParams("id"));
-
     }
 }
