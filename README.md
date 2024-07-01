@@ -115,3 +115,16 @@ public void edit(Rq rq) {
 - 각 클래스는 "모듈" 기능의 집합..
 - 응집도는 높을수록(비슷한 기능끼리 모여있으면 좋다.)
 - 결합도는 낮을수록(각 클래스끼리의 결합도, 파이프라인이 적을수록. 통신을 최소화)
+#### 7.
+
+- Main
+- App
+- Controller (motivation, system)
+- Service(motivation, system)
+  - 핵심 로직 판단.
+- DAO (motivation Repository, system Repository)
+- DB
+
+MVC 패턴
+
+- 지금 프로젝트에서 service 구조를 하나 더 붙여서 재구성함.
