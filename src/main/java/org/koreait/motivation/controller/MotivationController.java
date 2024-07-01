@@ -55,7 +55,7 @@ public class MotivationController {
         }
     }
 
-    public void del() {
+    public void delete() {
         System.out.print("id =");
         int delId = Container.getScanner().nextInt();
         motivations.remove(delId-1);
