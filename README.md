@@ -60,7 +60,58 @@ Rq 클래스에 대한 설명을 할 수 있어야 함. 구현은 못해도 상�
 
 여러가지 경우를 생각하여 시나리오 적용 및 데이터 흐름 따라가기
 
-1~9강 / 10~14강(삭제가 있는 과정) 나눠서 학습
+1~9강 / 10~15강(삭제가 있는 과정) 나눠서 학습
 
  - 수정기능 만들어보자.
 #### 4.
+- 수정기능 구현
+```java
+public void edit(Rq rq) {
+        int id;
+        try {
+            id = Integer.parseInt(rq.getParams("id"));
+
+        } catch (NumberFormatException e) {
+            System.out.println("정수 입력 오류");
+            return;
+        }
+
+        Motivation motivation = findById(id);
+
+        if (motivation == null) {
+            System.out.printf("%d번 motivation은 없어\n", id);
+            return;
+        }
+
+        // 불러온 motivation의 인스턴스변수에 접근.
+        System.out.println("body(기존) : " + motivation.getBody());
+        System.out.println("source(기존) : " + motivation.getSource());
+
+        System.out.print("body : ");
+        String body = Container.getScanner().nextLine();
+        System.out.print("source : ");
+        String source = Container.getScanner().nextLine();
+
+        // 불러온 motivation의 인스턴스변수 수정.
+        motivation.setBody(body);
+        motivation.setSource(source);
+
+        System.out.printf("%d번 motivation을 수정했습니다.\n", id);
+    }
+
+```
+
+- 이전까지는 "구현"에 초점..
+- 이후부터는 "구조"에 초점...
+- 16강 강의로 clone해서 반복 연습.
+
+#### 5.
+- 앞으로 할 단기 목표.
+1. motivation 앱 (오늘 완료)
+2. 똑같은거 한번 더 + 회원가입 기능
+3. DBMS
+
+#### 6.
+- 각 클래스는 "모듈" 기능의 집합..
+- 응집도는 높을수록(비슷한 기능끼리 모여있으면 좋다.)
+- 결합도는 낮을수록(각 클래스끼리의 결합도, 파이프라인이 적을수록. 통신을 최소화)

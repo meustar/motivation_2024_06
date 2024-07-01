@@ -14,7 +14,7 @@ public class App {
         SystemController systemController = new SystemController();
         MotivationController motivationControlle = new MotivationController();
 
-
+        // 메인 루프 -> 계속해서 명령어를 입력받는 역할.
         while (system_status == 1) {
             System.out.print("command) ");
             String cmd = Container.getScanner().nextLine().trim();
@@ -36,6 +36,7 @@ public class App {
                 continue;
             }
 
+            // 라우터 = 입력되어 가공된 명령어에 따라 맞는 기능에 넘기는 역할.
             switch (rq.getActionMethod()) {
                 case "exit" :
                     systemController.exit();

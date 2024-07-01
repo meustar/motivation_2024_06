@@ -9,8 +9,10 @@ import java.util.List;
 
 public class MotivationController {
 
+    // 명령을 받은 App클래스에서 넘겨받아 실행하는 부서.
+
     int lastId;
-    List<Motivation> motivations;   // 저장소 (db)의 역할
+    List<Motivation> motivations;   // 저장소 (db)의 역할  하지만, 메모리에 저장되는 특성상.. 영속성은 없다.
 
 
     public MotivationController() {

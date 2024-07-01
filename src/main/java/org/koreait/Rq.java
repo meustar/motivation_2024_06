@@ -5,6 +5,8 @@ import java.util.Map;
 
 public class Rq {
 
+    // 입력받은 명령어를 parsing. 가공 역할.
+
     private String actionMethod;
     private Map<String, String> params;
     private String errMsg = "";
