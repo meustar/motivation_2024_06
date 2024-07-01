@@ -12,11 +12,16 @@ public class Rq {
     // Rq = Request (요청)
     public Rq(String cmd) {
 
+        // parsing
         String[] cmdBits = cmd.split("\\?", 2);
 
         actionMethod = cmdBits[0]; // delete
 
         params = new HashMap<>();
+
+        if (cmdBits.length == 1) {
+            return;
+        }
 
         String[] paramBits;
 
@@ -31,7 +36,6 @@ public class Rq {
             String[] paramStrBits = paramStr.split("=", 2);
             String key = paramStrBits[0];
             String value = paramStrBits[1];
-            System.out.println("paramStr: " + paramStr + " key: " + key + " value: " + value);
             params.put(key, value);
         }
     }
