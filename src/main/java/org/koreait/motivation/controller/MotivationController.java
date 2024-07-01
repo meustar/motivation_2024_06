@@ -56,11 +56,6 @@ public class MotivationController {
     }
 
     public void delete() {
-        System.out.print("id =");
-        int delId = Container.getScanner().nextInt();
-        motivations.remove(delId-1);
-        System.out.println(delId + "번 motivation이 삭제되었습니다.");
-
 
     }
 }
